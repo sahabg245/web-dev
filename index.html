@@ -1,16 +1,69 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Group Chat Application</title>
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script defer src="js/client.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
 </head>
 <body>
-    i am now developing a web application for students
-    <div class="container">
-        <h1>Welcome to the Student Web Application</h1>
-        <p>This application is designed to help students manage their tasks and assignments.</p>
-        <button id="startButton">Get Started</button>
+    <div class="chat-app">
+        <!-- Sidebar for Active Users -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="bit_torrent.png" alt="Bit Torrent Logo">
+                <h3>Active Users</h3>
+            </div>
+            <ul id="active-peers">
+                <!-- Active users will be dynamically populated -->
+            </ul>
+        </div>
+        <!-- Group Section -->
+        <div class="group-sidebar">
+            <div class="sidebar-header">
+              <img src="bit_torrent.png" alt="Bit Torrent logo">
+               <h3>Your Groups</h3>
+            </div>
+            <ul id="user-groups">
+                <!-- User's groups will be dynamically populated -->
+            </ul>
+            <div id="create-group-container">
+                <input type="text" id="group-name-input" placeholder="Enter group name" required>
+                <button id="create-group-btn">Create</button>
+            </div>
+        </div>
+
+```
+    <!-- Chat Section -->
+    <div class="chat-section">
+        <div class="chat-header">
+            <h3 id="chat-header-title">Chat Room</h3>
+        </div>
+        <div class="chat-container" id="chat-container">
+            <!-- Chat messages will be dynamically added here -->
+        </div>
+        <div class="chat-input">
+            <form id="send-container">
+                <input type="text" id="msginp" placeholder="Enter your message here..." required>
+                <button class="btn" type="submit">
+                    <img src="send.ico" alt="Send">
+                </button>
+            </form>
+            <input type="file" id="file-input" style="display: none;">
+            <label for="file-input" class="file-share-btn">
+                <img src="sharing.ico" alt="File Share" class="file-icon">
+            </label>
+        </div>
+    </div>
+    
+</div>
+```
+
 </body>
 </html>
+
+this is my html code is there any change we used to do for peer to peer
